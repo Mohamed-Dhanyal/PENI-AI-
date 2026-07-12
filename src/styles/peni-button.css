@@ -1,0 +1,98 @@
+/* PENI button — deep red hero gradient, living breathing pulse */
+
+@keyframes peni-breathe {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgba(226, 35, 26, 0),
+      0 4px 20px rgba(0, 0, 0, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 18px 4px rgba(226, 35, 26, 0.28),
+      0 4px 24px rgba(0, 0, 0, 0.55);
+  }
+}
+
+@keyframes peni-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.peni-btn {
+  position: relative;
+  width: 100%;
+  height: 46px;
+  padding: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  background: linear-gradient(125deg, #1a0303 0%, #4a0a0a 45%, #6b1010 100%);
+  border: 1px solid rgba(226, 35, 26, 0.35);
+  animation: peni-breathe 3.2s ease-in-out infinite;
+  transition: border-color 0.2s, transform 0.18s;
+}
+
+.peni-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: peni-shimmer 4s linear infinite;
+  pointer-events: none;
+}
+
+.peni-btn:hover {
+  border-color: rgba(226, 35, 26, 0.7);
+  transform: translateY(-1px);
+  animation: none;
+  box-shadow: 0 6px 28px rgba(226, 35, 26, 0.35);
+}
+
+.peni-btn.is-active {
+  border-color: var(--taylors-red);
+  background: linear-gradient(125deg, #2a0505 0%, #6b1010 45%, #9a1818 100%);
+  box-shadow: 0 0 24px rgba(226, 35, 26, 0.4);
+  animation: peni-breathe 2.4s ease-in-out infinite;
+}
+
+.peni-btn-label {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-main);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: opacity 0.2s;
+}
+
+.peni-p {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ff6b6b;
+}
+
+:root[data-theme='light'] .peni-p {
+  color: #ff8080;
+}
+
+.peni-btn:active .peni-btn-label {
+  opacity: 0.75;
+}
+
+:root[data-theme='light'] .peni-btn {
+  background: linear-gradient(125deg, #2a0505 0%, #5a0e0e 45%, #8b1a1a 100%);
+  border-color: rgba(226, 35, 26, 0.5);
+}
+
+:root[data-theme='light'] .peni-btn.is-active {
+  background: linear-gradient(125deg, #3a0606 0%, #8b1a1a 45%, #b52020 100%);
+  box-shadow: 0 0 28px rgba(226, 35, 26, 0.45);
+}

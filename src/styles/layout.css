@@ -1,0 +1,192 @@
+.app-shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100vh;
+  padding: 0;
+}
+
+/* ---- Top bar ---- */
+.top-bar {
+  flex-shrink: 0;
+  height: 46px;
+  border-radius: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: 1px solid var(--glass-border);
+  background: var(--surface, var(--control-bg));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.top-bar-brand {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--text);
+  margin-left: 48px;
+}
+
+.top-bar-p {
+  color: var(--taylors-red-light);
+}
+
+.top-bar-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--glass-border);
+  flex-shrink: 0;
+}
+
+.top-bar-view {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.top-bar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-bar-student {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.top-bar-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.top-bar-id {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.theme-toggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--control-bg-hover);
+}
+
+.logout-btn {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--control-border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.logout-btn:hover {
+  background: rgba(226, 35, 26, 0.1);
+  border-color: var(--taylors-red);
+  color: var(--taylors-red-light);
+}
+
+/* ---- Body row (below top bar) ---- */
+.app-body {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  min-height: 0;
+  padding: 8px;
+}
+
+/* ---- Main area ---- */
+.main-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+
+.main-placeholder {
+  text-align: center;
+  user-select: none;
+}
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  background: linear-gradient(120deg, var(--taylors-red-light), var(--taylors-red), var(--taylors-red-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.main-subtitle {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+}
+
+/* ---- Right panel ---- */
+.right-panel {
+  width: 188px;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+.right-panel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 16px 10px 16px;
+}
+
+.nav-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-divider {
+  height: 1px;
+  background: var(--glass-border);
+  margin: 8px 0;
+}
+
+.peni-slot {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--glass-border);
+}
+
