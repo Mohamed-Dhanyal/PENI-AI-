@@ -259,3 +259,16 @@
     filter: blur(75px) brightness(1.5);
   }
 }
+
+.webgl-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.webgl-bg canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}

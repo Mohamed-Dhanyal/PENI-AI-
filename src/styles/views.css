@@ -2587,6 +2587,31 @@
 
 .peni-message.ai .peni-bubble {
   max-width: 100%;
+  position: relative;
+  padding-right: 28px;
+}
+
+.peni-tts-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--control-border);
+  background: var(--control-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.peni-tts-btn:hover {
+  background: var(--control-bg-hover);
+  border-color: var(--taylors-red);
+  color: var(--taylors-red-light);
 }
 
 .peni-typing {

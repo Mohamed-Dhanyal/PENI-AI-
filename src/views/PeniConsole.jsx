@@ -48,6 +48,15 @@ const MOCK_HISTORY = [
 
 const HISTORY_GROUPS = ['Today', 'Yesterday', 'Previous 7 days']
 
+function speak(text) {
+  if (!('speechSynthesis' in window)) return
+  window.speechSynthesis.cancel()
+  const utterance = new SpeechSynthesisUtterance(text)
+  utterance.rate = 1
+  utterance.pitch = 1
+  window.speechSynthesis.speak(utterance)
+}
+
 function Bubble({ me, text, streaming, userInitial }) {
   return (
     <div className={`peni-message ${me ? 'user' : 'ai'}`}>
@@ -64,6 +73,21 @@ function Bubble({ me, text, streaming, userInitial }) {
             {text}
             {streaming && <span className="peni-cursor" />}
           </p>
+          {!me && !streaming && (
+            <button
+              className="peni-tts-btn"
+              type="button"
+              title="Read aloud"
+              aria-label="Read Peni's response aloud"
+              onClick={() => speak(text)}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </div>

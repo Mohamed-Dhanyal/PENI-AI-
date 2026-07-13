@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { login, register } from '../api/index.js'
+import WebGLBackground from './WebGLBackground.jsx'
 import '../styles/login.css'
 
 const ALLOWED_HINT = '@sd.taylors.edu.my (student) or @taylors.edu.my (staff)'
@@ -47,6 +48,7 @@ export default function LoginPage({ onLogin, theme, onThemeToggle }) {
       >
         {theme === 'dark' ? '☀ Light mode' : '☾ Dark mode'}
       </button>
+      <WebGLBackground />
       <div className="rain-bg" aria-hidden="true" />
       <div className="bg-orbs" aria-hidden="true">
         <div className="orb orb-1" />
