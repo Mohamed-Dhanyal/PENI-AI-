@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "PENI LMS Backend API",
   "main": "server.js",
+  "engines": {
+    "node": ">=22.5.0 <23"
+  },
   "scripts": {
     "start": "node --experimental-sqlite server.js",
+    "start:demo": "node --experimental-sqlite db/start-demo.js",
     "dev": "node --experimental-sqlite --watch server.js",
     "seed": "node --experimental-sqlite db/seed.js"
   },
